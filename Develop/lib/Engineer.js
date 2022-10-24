@@ -1,33 +1,69 @@
 // TODO: Write code to define and export the Engineer class.  HINT: This class should inherit from Employee.
-const inquirer = require("inquirer");
-
 const ansEngineer = [
     { 
         type: 'input',
         message: 'What is the Engineer name?',
-        name: 'getName'
+        name: 'name'
     },
     {
         type: 'input',
         message: 'What is ID of this user?',
-        name: 'getId'
+        name: 'id'
     },
     {
         type: 'input',
         message: 'What is the Email of this user?',
-        name: 'getEmail',
+        name: 'email',
+        validate: function (email) {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (valid) {
+                console.log(" confirmed");
+                return true;
+            } else {
+                console.log(" please Enter Valid email");
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         message: 'What is the GitHub name of this user?',
-        name: 'getGithub'
+        name: 'github'
     }
 ]
 
-const engineerInfo = function engineer() {
-    inquirer.prompt(ansEngineer)
+class Engineer {
+    constructor (name, id, email, github) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.github = github;
+        this.role = 'Engineer'
+    }
+
+    getRole() {
+        return 'Engineer';
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getId() {
+        return this.id;
+    }
+
+    getEmail() {
+        return this.email;
+    }
+
+    getGithub() {
+        return this.github;
+    }
+
 }
 
 module.exports = {
-    engineerInfo
+    ansEngineer,
+    Engineer
 }
