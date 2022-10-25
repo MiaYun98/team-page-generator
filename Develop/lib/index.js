@@ -72,7 +72,6 @@ async function getManager () {
             ans.officeNumber
         );
         employeeArr.push(employee)
-        console.log(employeeArr)
         chosingJobTitle();
     });
     

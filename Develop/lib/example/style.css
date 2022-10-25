@@ -1,3 +1,26 @@
+body {
+    color: white;
+    margin: 0.5%;
+}
+
+.team-heading {
+background-color: salmon;
+}
+
+.card {
+box-shadow: 5px 0 5px gray;
+
+}
+
+.card-header {
+    background-color: rgb(127, 127, 235);
+}
+
+.card-body {
+    color: black;
+}
+
 .employee-card {
-    margin: 5%;
+    margin: 20px;
+    width: fit-content;
 }
